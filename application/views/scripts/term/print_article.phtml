@@ -1,0 +1,22 @@
+<?php #Содержимое материала
+//   
+    $terms=$this->nodeTerms($this->node);
+
+    echo $this->itemTitle($this->node)->h1();
+    echo $terms->part(array(HEAD,VISIBILITY,SOURCE,FORM))->div(TERMS);
+    echo $this->itemPic($this->node)->div('text center');
+    echo $this->nodeText($this->node)->div(TEXT);
+    echo $terms->part(TASK)->label('&#182;')->div(TASK);
+    echo $terms->part(RELATION)->label('@')->div(RELATION);
+    echo $terms->part(TAG)->label(TAGS)->div(TAGS);
+
+?>
+<div id="form<?php echo $this->node->id; ?>" class="jform"></div>
+<div class="separator">
+<?php
+    echo $this->itemId($this->node)->span('left');
+    echo $this->itemDate($this->node)->span('left');
+    echo $terms->part(array('book','publish','rating'))->span('right');
+?>
+</div>
+

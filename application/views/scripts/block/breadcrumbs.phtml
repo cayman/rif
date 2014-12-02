@@ -1,0 +1,11 @@
+<!-- - - - - breadcrumbs- - - - -->
+<div id="breadcrumbs" class="block">
+<?php
+echo $this->navigation()
+            ->breadcrumbs()
+            ->setMinDepth(1)
+            ->setSeparator(' =&gt; ')
+            ->setLinkLast(true)
+            ->render();
+?>
+</div>

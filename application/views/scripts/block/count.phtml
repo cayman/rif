@@ -1,0 +1,15 @@
+<?php if(!isset($this->cacheName) || !$this->cache->start($this->cacheName)): ?>
+<!-- - - - - count - - - -->
+<div id="bar_count" class="entry block">
+<h1><?php echo $this->headline;?></h1>
+<?php
+    echo $this->translate('publish'),": ", $this->publish, ",  ";
+	echo $this->translate(ALL),": ", $this->all;
+?>
+<br/>
+<a href="/rss.xml" title="<?php echo $this->translate('rif.name rss feed')?>"><img src="/image/rss.gif" alt="RSS" border="0"/></a>
+
+
+</div><!--end text-->
+<?php if($this->cacheName) { $this->cache->end($this->cacheTags); $this->cacheName = null;} ?>
+<?php endif;?>

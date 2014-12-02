@@ -1,0 +1,8 @@
+# IntelliJ IDEA internals:
+*.iml
+*.ipr
+*.iws
+.idea/
+
+library/**
+

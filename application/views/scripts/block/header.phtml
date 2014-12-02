@@ -1,0 +1,20 @@
+<?php  $this->jQuery()->onLoadCaptureStart(); ?>
+        $j('#slider1').bxSlider({
+            auto: true,
+            speed: 6000,
+            pause: 9000,
+            mode: 'fade',
+            autoHover: true,
+            pager: false,
+            controls: false
+        });
+<?php $this->jQuery()->onLoadCaptureEnd();?>
+<div  class="verse">
+<?php if(!$this->cache->start($this->cacheName)): ?>
+<ul id="slider1" class="slider" >
+<?php foreach ($this->nodes as $node)
+    echo $this->nodeText($node)->li();?>
+</ul>
+<?php $this->cache->end($this->cacheTags); endif;?>
+</div>
+<img  src="/image/rif.gif" alt="Риф Закиров" />

@@ -1,0 +1,29 @@
+<?php echo $this->doctype(),"\n" ?>
+<html>
+<head>
+<?php
+echo $this->headTitle(),"\n";
+echo $this->headMeta(),"\n";
+echo $this->headLink()->appendStylesheet('/css/style-print.css',"print"),"\n";
+echo $this->headScript(),"\n";?>
+</head>
+<body>
+<div id="main">
+<!-- - - - - context- - - - -->
+<div id="content">
+<div id="leftbox" class="contentbox">
+<!-- - - - - main content- - -->
+<div id="text">
+<?php echo $this->messages(); //сообщения ?>
+<?php echo $this->layout()->content; ?>
+</div>
+</div><!--end left box-->
+</div><!--end content-->
+
+</div>
+</body>
+</html>
+
+
+
+

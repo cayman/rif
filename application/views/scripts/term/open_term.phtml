@@ -1,0 +1,10 @@
+<?php
+    $actions = $this->itemActions(TERM,$this->term);
+    echo $this->itemTitle($this->term)->h1();
+    echo $actions->part(array(_INFO,_EDIT,_DELETE,_ADD,_PRINT))->div('actions');
+    if($this->login()->hasIdentity())
+        echo $this->itemDesc($this->term)->label(DESC)->div('desc');
+    echo $this->itemPic($this->term)->div('text center');
+?>
+
+

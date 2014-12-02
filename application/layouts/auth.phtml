@@ -1,0 +1,46 @@
+<?php echo $this->doctype(),"\n" ?>
+<html>
+<head>
+<?php
+echo $this->headTitle(),"\n";
+echo $this->headMeta(),"\n";
+echo $this->headLink(),"\n";
+echo $this->headScript(),"\n";?>
+<?php echo $this->layout()->script; ?>
+</head>
+<body>
+<!-- - - - - auth - - - - -->
+<div id="main">
+<!-- - - - - header - - - - -->
+<div id="header">
+</div>
+<!-- - - - - menu - - - - - -->
+<div id="menu">
+<?php echo $this->partial('menu/top.phtml'); ?>
+</div>
+<!-- - - - - context- - - - -->
+<div id="content">
+<div id="middlebox" class="contentbox">
+<?php echo $this->messages(); //сообщения ?>
+<?php echo $this->layout()->center; ?>
+<!-- - - - - main content- - -->
+<div id="text">
+<?php echo $this->layout()->content; ?>
+</div>
+
+</div>
+</div>
+<!-- - - - - footer - - - - -->
+<div id="footer" >
+<?php echo $this->partial('block/footer.phtml'); ?>
+<span class="right">
+<?php echo $this->layout()->statistic; ?>
+</span>
+</div>
+</div>
+</body>
+</html>
+
+
+
+

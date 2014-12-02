@@ -1,0 +1,19 @@
+<?php if(!isset($this->cacheName) || !$this->cache->start($this->cacheName)): ?>
+
+<?php foreach ($this->terms as $term): ?>
+<div id="term<?php echo $term->id; ?>" class="node">
+<?php echo $this->partial("/term/open_term.phtml",array(TERM => $term)); ?>
+</div>
+<?php endforeach; ?>
+
+<?php foreach ($this->paginator as $node): ?>
+<div id="node<?php echo $node->id; ?>" class="node">
+<a name="n<?php echo $node->id; ?>"></a>       
+<?php echo $this->partial("/term/open_{$node->type_code}.phtml",array(NODE=>$node)); ?>
+</div>
+<?php endforeach; ?>
+<?php echo $this->paginationControl($this->paginator,'Sliding','/block/paginator.phtml');?>
+<?php if($this->cacheName) $this->cache->end($this->cacheTags); ?>
+<?php endif; $this->cacheName = null;?>
+
+

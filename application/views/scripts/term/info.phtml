@@ -1,0 +1,23 @@
+<div id="text">
+<div id="term<?php echo $this->term->id ?>" class="node">
+
+<?php #Содержимое элемента термина
+
+    $actions = $this->itemActions(TERM,$this->term);
+
+    echo $this->itemName($this->term)->label(TERM)->h1();
+    echo $this->itemName($this->term->getClassifier(),CLASSIFIER)->label(CLASSIFIER)->div('terms');
+    echo $actions->part(array(_OPEN,_EDIT,_DELETE,_ADD))->div('actions');
+    echo $this->field($this->term->id)->label(ID)->div('field');
+    echo $this->itemDesc($this->term)->label(DESC)->div('desc');
+    echo $this->itemDate($this->term)->label(DATE)->div('field');
+    echo $this->field($this->term->order)->label(ORDER)->div('field');
+
+?>
+<div class="separator">
+<?php
+    echo $this->itemDate($this->term)->span('left');
+?>
+</div>
+</div>
+</div><!--end text-->

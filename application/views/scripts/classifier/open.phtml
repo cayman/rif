@@ -1,0 +1,11 @@
+<?php if(!isset($this->cacheName) || !$this->cache->start($this->cacheName)): ?>
+<h1><?php echo $this->headline;?></h1>
+
+<?php foreach ($this->terms as $term): ?>
+<div id="term<?php echo $term->id; ?>" class="node">
+<?php echo $this->partial("/classifier/open_term.phtml",array(TERM => $term,'action'=>$this->action)); ?>
+</div>
+<?php endforeach; ?>
+<?php if($this->cacheName) { $this->cache->end($this->cacheTags); $this->cacheName = null;} ?>
+<?php endif;?>
+

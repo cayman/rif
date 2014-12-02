@@ -1,0 +1,7 @@
+<?php if(!$this->cache->start($this->cacheName)): ?>
+<?php
+   echo $this->navigation()->sitemap()
+            // ->setUseSchemaValidation(true)
+             ->setFormatOutput(true);
+?>
+<?php $this->cache->end($this->cacheTags); endif;?>

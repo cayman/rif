@@ -1,0 +1,14 @@
+<?php if(!isset($this->cacheName) || !$this->cache->start($this->cacheName)): ?>
+<!-- - - - - heads- - - - -->
+<div id="menu_heads" class="entry block">
+<?php $heads_menu = $this->navigation()->findOneById(CLASSIFIER.HEAD_CLASS_ID); ?>
+<h1><?php echo $this->translate($heads_menu->getLabel()); ?></h1>
+<ul class="sidebar">
+<?php foreach ($heads_menu as $page)
+    echo $this->itemLink($page, $this->letter($page->text))
+              ->li($this->cycle(array('chapter0', 'chapter1'))->next());
+?>
+</ul>
+</div>
+<?php if($this->cacheName) { $this->cache->end($this->cacheTags); $this->cacheName = null;} ?>
+<?php endif;?>

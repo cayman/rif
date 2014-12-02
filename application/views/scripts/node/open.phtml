@@ -1,0 +1,9 @@
+<?php  if(!isset($this->cacheName) || !$this->cache->start($this->cacheName)): ?>
+<div id="node<?php echo $this->node->id ?>" class="node">
+<?php
+    echo $this->partial("/node/open_{$this->node->type_code}.phtml",array(NODE=>$this->node,'prev'=>$this->prev,'next'=>$this->next));
+?>
+</div>
+<?php if($this->cacheName) $this->cache->end($this->cacheTags); ?>
+<?php endif; $this->cacheName = null;?>
+

@@ -1,0 +1,9 @@
+<?php
+    $menu=Zend_Registry::get(NAVIGATION);
+    $action_container = $this->itemActions($menu[TERM],$this->term);
+?>
+<td><?php echo $this->term->id; ?></td>
+<td><?php echo $this->itemName($this->term,TERM)->span(); ?></td>
+<td><?php echo $this->term->date; ?></td>
+<td><?php echo $this->term->order; ?></td>
+<td class="action"><?php echo $action_container->bar('top',true)->span('actions');?></td>

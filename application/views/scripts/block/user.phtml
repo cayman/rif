@@ -1,0 +1,10 @@
+<!-- - - - - user- - - - -->
+<div id="bar_user" class="entry block">
+<?php
+    if($this->login()->hasIdentity()){
+        $user=$this->login()->getUser();
+        echo $this->translate($user->role),': ',$user->name,PHP_EOL,'<br/>';
+    }else
+        echo $this->translate($this->login()->getRole()),PHP_EOL,'<br/>';    
+?>
+</div>

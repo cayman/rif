@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /captcha/
+Disallow: /image/
+Disallow: /calendar/
+Disallow: /js/
+Disallow: /css/
+Disallow: /pic/
+Allow: /
+Host: rif.name

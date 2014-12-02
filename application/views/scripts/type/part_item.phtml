@@ -1,0 +1,20 @@
+<?php #Содержимое элемента классификтора
+
+    $menu=Zend_Registry::get(NAVIGATION);
+    $action_container = $this->itemActions($menu[TYPE],$this->type);
+
+    echo $this->itemName($this->type)->label(TYPE)->h1();
+    echo $action_container->bar('top')->div('actions');
+    echo $this->field($this->type->id)->label(ID)->div('field');
+    echo $this->field($this->type->code)->label(CODE)->div('field');
+    echo $this->itemDesc($this->type)->label(DESC)->div('field');
+    echo $this->field($this->type->comment)->label(COMMENT)->div('field');
+
+//    echo $this->field($this->type->email)->label('e-mail')->div('field');
+
+?>
+<div class="separator">
+<?php    
+    echo $action_container->bar('bottom')->span('right');        
+?>
+</div>

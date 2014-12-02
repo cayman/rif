@@ -1,0 +1,6 @@
+<?php if(!$this->cache->start($this->cacheName)): ?>
+<!-- - - - - find- - - - -->
+<div id="menu_search" class="entry block">
+<?php  echo $this->form; ?>
+</div>
+<?php $this->cache->end($this->cacheTags); endif;?>

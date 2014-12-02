@@ -1,0 +1,36 @@
+<?php if ($this->pageCount):
+$title = $this->translate(PAGE);
+?>
+<!-- - - -  paginator - - - -->
+<div id="paginator">
+<div class="page block">
+<ul class="links inline">
+<li>
+<?php if (isset($this->previous)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->first)); ?>" class="prev" title="<?php echo $title,' ',$this->first;?>"><?php echo $this->first;?></a>
+<?php endif; ?>
+</li>
+<li>
+<?php if (isset($this->previous)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->previous));?>" class="prev" title="<?php echo $title,' ',$this->previous;?>">
+      <?php echo $this->translate('prev page');?></a>
+<?php endif; ?>
+</li>
+<li>
+ <a href="#" class="next" title="<?php echo $this->translate('current page');?>">
+     <?php echo $this->current;?></a>
+</li>
+<li>
+<?php if (isset($this->next)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->next)); ?>" class="next" title="<?php echo $title,' ',$this->next;?>">
+     <?php echo $this->translate('next page');?></a>
+ <?php endif; ?>
+</li>
+<li>
+<?php if (isset($this->next)): ?>
+  <a href="<?php echo $this->url(array('page' => $this->last)); ?>" class="prev" title="<?php echo $title,' ',$this->last;?>"><?php echo $this->last;?></a>
+<?php endif; ?>
+</li>
+</div>
+</div><!-- end paginator -->
+<?php endif; ?>

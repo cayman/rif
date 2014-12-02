@@ -1,0 +1,95 @@
+/*-----------------------FORM----------------------*/
+
+.edit_form,
+.auth_form {
+    display: block;
+    margin: 10px;
+    border: 1px solid #7b5a38; /*#FAEBD7;*/
+    padding: 5px 20px 5px 20px;
+    background: #fffeef; /*clear: both;*/
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+}
+
+dl {
+    margin: 0px;    
+   /* border: 3px double #ccc; /**/
+    padding: 0.1em;
+
+}
+
+label{
+    color: #7b5a38;
+    font-size: 10pt;
+    font-weight: bold; /*border : 1px solid gray;/**/
+}
+label:after {
+    content: ":";
+}
+dt {
+/*margin: 1em 0em 0em 0em;*/
+    display: block; /**/
+  /*width: 150px; /**/
+}
+
+dd {
+    margin: 0;
+    padding: 0 0 0.5em 0;
+}
+
+dt#date-label,
+dd#date-element,
+dl button {
+    margin-right: 5px;
+    display: inline; /*inline-block;*/
+}
+dt.inline,
+dd.inline,
+label.inline{
+    margin-right: 5px;
+    display: inline;
+}
+
+
+
+#text Dform p {
+    margin-top: 0em;
+    margin-bottom: 1em;
+}
+
+#text Dform input {
+    display: block;
+    padding: 0.2em;
+}
+
+#text Dform textarea {
+    display: block;
+    width: 100%;
+}
+
+#text Dform submit {
+    display: block;
+}
+
+#text .errors {
+    color: red;
+}
+
+
+
+.autocomplete-w1 {
+    /*background:url(/image/shadow.png) no-repeat bottom right; */
+    position:absolute; top:0px; left:0px; margin:6px 0 0 6px; /* IE6 fix: */ _background:none; _margin:1px 0 0 0; }
+.autocomplete { border:1px solid #999; background:#FFF; cursor:default; text-align:left; max-height:350px; overflow:auto; margin:-6px 6px 6px -6px; /* IE6 specific: */ _height:350px;  _margin:0; _overflow-x:hidden; }
+.autocomplete .selected {
+   background:#ede4d4;/*#fffaaf; border : 1px solid #FAEBD7;
+   border : 1px solid #FAEBD7;*/
+ }
+.autocomplete div { padding:2px 5px; white-space:nowrap; overflow:hidden; }
+.autocomplete strong {
+    font-weight:normal;
+    color:red;
+    text-shadow: #ccc 0 1px 1px;
+ }

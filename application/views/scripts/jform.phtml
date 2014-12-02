@@ -1,0 +1,8 @@
+<?php $this->jQuery()->onLoadCaptureStart(); ?>
+$j("a.verse_add").click(function(){
+   var $block = $j(this).parent().parent();
+   $j("form.verse_form").hide().insertAfter($block).fadeIn('slow');
+   $j("textarea#verse").focus();
+   return false; 
+});
+<?php  $this->jQuery()->onLoadCaptureEnd(); ?>

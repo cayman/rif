@@ -1,0 +1,7 @@
+<!-- - - - - login- - - - -->
+<div id="menu_login" class="entry block">
+<?php  
+	$page=$this->navigation()->getContainer()->findOneById(_LOGIN);
+	echo $this->navigation()->menuBar()->htmlify($page);
+ ?>
+</div>

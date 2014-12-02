@@ -1,0 +1,8 @@
+<!-- - - - - random- - - - -->
+<div id="bar_random" class="entry block">
+<h1><?php echo $this->headline;?></h1>
+<div id="node<?php echo $this->node->id ?>" class="node">
+<?php if(empty($this->node->type_code)) Log::err($this,'type_code empty node ='.$this->node->id); ?>
+<?php echo $this->partial("/block/random_{$this->node->type_code}.phtml",array(NODE=>$this->node)); ?>
+</div>
+</div><!--end text-->

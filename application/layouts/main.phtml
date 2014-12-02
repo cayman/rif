@@ -1,0 +1,89 @@
+<?php echo $this->doctype(),"\n" ?>
+<html>
+<head>
+<?php
+echo $this->headTitle(),"\n";
+echo $this->headMeta(),"\n";
+echo $this->headLink(),"\n";
+    $this->jQuery()
+        ->addJavascriptFile("/js/markitup/jquery.markitup.js")
+        ->addJavascriptFile("/js/markitup/sets/bbcode/set.js")
+        ->addStylesheet("/js/markitup/skins/markitup/style.css")
+        ->addStylesheet("/js/markitup/sets/bbcode/style.css");
+
+if($this->login()->hasIdentity())
+    $this->jQuery()
+        ->addJavascriptFile("/js/autocomplete/jquery.autocomplete-min.js") 
+        ->addJavascriptFile("/js/spinner/ui.spinner.min.js") 
+       // ->addJavascriptFile("/js/jeditable/jquery.jeditable.mini.js")
+       // ->addJavascriptFile("/js/form/jquery.form.js")
+        ->addJavascriptFile('/calendar/js/jscal2.js')
+        ->addJavascriptFile('/calendar/js/lang/ru.js')
+        ->addStylesheet("/js/ui/humanity/style.css")
+        ->addStylesheet("/js/spinner/style.css")
+        ->addStylesheet("/js/autocomplete/style.css")
+        ->addStylesheet('/calendar/css/jscal2.css')
+        ->addStylesheet('/calendar/css/border-radius.css')
+        ->addStylesheet('/calendar/css/gold/gold.css');
+
+
+echo $this->jQuery();
+echo $this->headScript(),"\n";?>
+<?php echo $this->layout()->script; ?>
+</head>
+<body>
+<!-- - - - - editor - - - - -->
+<div id="main">
+
+<!-- - - - - header - - - - -->
+<div id="header">
+<?php echo $this->layout()->header; ?>
+</div>
+
+<!-- - - - - menu - - - - - -->
+<div id="menu">
+<?php echo $this->partial('menu/top.phtml'); ?>
+</div>
+
+<!-- - - - - context- - - - -->
+<div id="content">
+
+<!-- - - - - left box - - - -->
+<div id="leftbox" class="contentbox">
+<?php echo $this->layout()->center; //миссия и бридкрабс ?>
+
+<!-- - - - - main content- - -->
+<div id="text">
+<?php echo $this->messages(); //сообщения ?>
+<?php echo $this->layout()->error; //сообщения ?>
+<?php echo $this->layout()->content; //основное содиржание ?>
+<?php echo $this->layout()->info;//подчиненные блоки ?>
+<?php echo $this->layout()->sub;//подчиненные блоки ?>
+<div id="dialog"></div>
+</div>
+
+</div><!--end left box-->
+
+<!-- - - - - right box- - - -->
+<div id="rightbox" class="contentbox">
+<?php echo $this->layout()->right; ?>
+
+</div><!--end righ box-->
+
+</div><!--end content-->
+
+<!-- - - - - footer - - - - -->
+<div id="footer" >
+<?php echo $this->partial('block/footer.phtml'); ?>
+<span class="right">
+<?php echo $this->layout()->statistic; ?>
+</span>
+</div><!--end footer-->
+
+</div><!--end main-->
+</body>
+</html>
+
+
+
+

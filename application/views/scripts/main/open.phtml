@@ -1,0 +1,12 @@
+<?php if(!$this->cache->start($this->cacheName)): ?>
+<h1><?php echo $this->headline;?></h1>
+<?php foreach ($this->nodes as $node): ?>
+<div id="v<?php echo $node->id ?>" class="node">
+<?php
+    echo $this->partial("/main/open_{$node->type_code}.phtml",array('node'=>$node));
+?>
+</div>
+<?php endforeach; ?>
+<?php $this->cache->end($this->cacheTags); endif;?>
+
+

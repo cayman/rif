@@ -1,0 +1,15 @@
+<?php #Комментарий
+
+    $actions = $this->itemActions(COMMENT,$this->item);
+    #Содержимое комментария
+    echo $this->commentLevel($this->item)->div('info');
+    echo $actions->part(array(_EDIT,_DELETE))->div('actions');
+    echo $this->commentName($this->item)->label(NAME)->div('name level'.$this->item->level);
+    echo $this->commentText($this->item)->div('comment  level'.$this->item->level);
+?>
+<div class="separator">
+<?php
+    echo $this->itemDate($this->item)->span('left');
+    echo $this->commentIP($this->item)->span('left');
+?>
+</div>

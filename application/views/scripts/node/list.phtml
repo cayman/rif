@@ -1,0 +1,11 @@
+<h2><?php echo $this->headline; Log::alert($this,"Attention!!")?></h2>
+<?php foreach ($this->items as $node): ?>
+<div id="node<?php echo $node->id; ?>" class="node">
+<a name="n<?php echo $node->id; ?>"></a>       
+<?php
+    echo $this->partial("/term/open_{$node->type_code}.phtml",array('node'=>$node));
+?>
+</div>
+<?php endforeach; ?>
+
+

@@ -1,0 +1,126 @@
+/*-----------------------LINKS----------------------*/
+
+
+ul.sidebar {
+    margin: 0px; /*border : 1px solid black;*/
+    text-align: left;
+    padding: 0px 5px 0px 5px;    
+    /*border : 1px solid black;*/
+}
+
+ul.sidebar li {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    /*border : 1px solid green;*/
+}
+
+ul.sidebar li:before {
+/*content: "\00BB \0020";*/
+}
+ul.sidebar li a {
+    text-decoration: none;
+}
+
+ul.sidebar li a:hover {
+    color: #8B008B;
+    text-shadow: #ccc 0 1px 1px;
+    border-bottom: solid #8B008B 1px;
+}
+
+ul.sidebar li.active a {
+    color: black;
+    font-weight: 600;
+    text-shadow: #ccc 0 1px 1px;
+}
+
+/*---------------------------#rightbox--------------------------*/
+
+#rightbox .entry {
+    display: block;
+    padding: 5px 5px 10px 5px;  
+    /*font-family: times, tahoma, sans-serif;*/
+    font-size: 11pt;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0px;    
+    margin-bottom: 10px;
+    text-align: center;
+}
+#rightbox .left {
+    text-align: left;
+}
+
+#rightbox h1 {
+    /*border : 1px solid #FAEBD7;*/
+    margin:0;
+
+    /*background: #debd8c ;/*"#d7b788;/*#fff;*/
+    font-family: Garamond, "Bookman Old Style", "Times New Roman";
+    letter-spacing: 1px;
+    font-size: 13pt;
+    font-style: bold;
+    text-align: center;
+    color: #7b5a38;
+    text-shadow: #000 0 1px 1px;
+}
+
+
+
+/*---------------------------CHAPTERS--------------------------*/
+
+.letter {
+    font-size: 150%;
+    font-family: serif;
+    position: relative;
+    top: 5px;
+    color: red;
+    text-shadow: #ccc 0 1px 1px;
+}
+
+.chapter0 {
+    padding: -5px 5px -5px 0px;
+    font-family: Garamond, "Bookman Old Style", "Times New Roman";
+    letter-spacing: 1px;
+    font-size: 13pt;
+    font-style: italic;
+    text-align: right; /*border : 1px solid black;/**/
+}
+
+#rightbox .chapter1 {
+    padding: 0px 5px 0px 0px;
+    font-family: Garamond, "Bookman Old Style", "Times New Roman";
+    letter-spacing: 1px;
+    font-size: 13pt;
+    font-style: italic;
+    text-align: left; /*border : 1px solid black;/**/
+}
+
+#rightbox .tags {
+    font-family: Garamond, "Bookman Old Style", "Times New Roman";
+    letter-spacing: 1px;
+    font-style: italic;
+    font-size: 12pt;
+    text-align: left; /*border : 1px solid black;/**/
+}
+
+#rightbox a {
+    text-shadow: #ccc 0 1px 1px;
+}
+
+#rightbox a.active {
+    color: black;
+    font-weight: 500;
+    text-shadow: #ccc 0 1px 1px;
+}
+
+#rightbox a:hover,
+#rightbox a.active:hover {
+    color: #8B008B;
+    text-shadow: #ccc 0 1px 1px;
+}
+
+/* @entry */
+.entry  .node {
+    margin: 10px 0px 10px 0px;
+}

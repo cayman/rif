@@ -1,0 +1,9 @@
+<?php
+    $menu=Zend_Registry::get(NAVIGATION);
+    $action_container = $this->itemActions($menu[TYPE],$this->type);
+?>
+<td><?php echo $this->type->id; ?></td>
+<td><?php echo $this->type->code; ?></td>
+<td><?php echo $this->itemName($this->type,TYPE)->span(); ?></td>
+<td><?php echo $this->type->comment; ?></td>
+<td class="action"><?php echo $action_container->bar('top',true)->span('actions');?></td>

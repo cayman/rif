@@ -1,0 +1,19 @@
+<?php #Содержимое элемента классификтора
+
+    $menu=Zend_Registry::get(NAVIGATION);
+    $action_container = $this->itemActions($menu[USER],$this->user);
+
+    echo $this->itemName($this->user)->label(CLASSIFIER)->h1();
+    echo $action_container->bar('top')->div('actions');
+    echo $this->field($this->user->id)->label(ID)->div('field');
+    echo $this->field($this->user->login)->label(CODE)->div('field');
+    echo $this->field($this->user->password)->label(PASSWORD)->div('field');
+    echo $this->field($this->user->role)->label(ROLE)->div('field');
+//    echo $this->field($this->user->email)->label('e-mail')->div('field');
+
+?>
+<div class="separator">
+<?php    
+    echo $action_container->bar('bottom')->span('right');        
+?>
+</div>

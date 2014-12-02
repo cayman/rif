@@ -1,0 +1,34 @@
+<div id="text">
+<h1><?php echo $this->headline;?></h1>
+<div id="classifier" class="node">
+<?php  echo $this->help;  ?>
+<div class="separator">
+</div>
+ </div>
+ <table class="items">
+<caption><?php echo $this->headline;?></caption>
+<tr>
+    <th><?php echo $this->translate(ID); ?></th>
+    <th><?php echo $this->translate(CODE); ?></th>
+    <th><?php echo $this->translate(NAME); ?></th>
+    <th><?php echo $this->translate(ORDER); ?></th>
+    <th><?php echo $this->translate(ACTION); ?></th>
+</tr>
+<?php foreach ($this->list as $classifier):?>
+<tr class="<?php echo $this->cycle(array('odd', 'even'))->next(); ?>">
+<?php
+    $actions = $this->itemActions(CLASSIFIER,$classifier);
+?>
+<td><?php echo $classifier->id; ?></td>
+<td><?php echo $classifier->code ?></td>
+<td><?php echo $this->itemName($classifier,CLASSIFIER)->span(); ?></td>
+<td><?php echo $classifier->order ?></td>
+<td class="action"><?php echo $actions->part(array(_INFO,_EDIT,_DELETE,_COPY,_ADD,_PRINT))->div('actions');?></td>
+
+</tr>
+<?php endforeach;?>
+</table>
+
+</div><!--end text-->
+
+

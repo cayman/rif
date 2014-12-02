@@ -1,0 +1,8 @@
+<?php #Содержимое материала
+    $actions = $this->itemActions(NODE,$this->node);
+    $text=$this->nodeText($this->node,7);
+    echo $text->div('verse hide'.$this->node->hide);
+    if($text->isShort())
+        echo $actions->part('read')->div('read');
+    echo $this->nodeTerms($this->node)->part(HEAD)->div(TERMS);
+?>

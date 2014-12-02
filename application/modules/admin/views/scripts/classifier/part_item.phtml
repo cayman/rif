@@ -1,0 +1,22 @@
+<?php #Содержимое элемента классификтора
+
+    $menu=Zend_Registry::get(NAVIGATION);
+    $action_container = $this->itemActions($menu[CLASSIFIER],$this->classifier);
+
+    echo $this->itemName($this->classifier)->label(CLASSIFIER)->h1();
+    echo $action_container->bar('top')->div('actions');
+    echo $this->field($this->classifier->code)->label(CODE)->div('field');
+    echo $this->itemDesc($this->classifier)->label(DESC)->div('field');
+    echo $this->field($this->classifier->order)->label(ORDER)->div('field');
+    echo $this->field($this->classifier->autocomplete)->label(AUTOCOMPLETE)->div('field');
+    echo $this->field($this->classifier->multiple)->label(MULTIPLE)->div('field');
+    echo $this->field($this->classifier->value_type)->label('value_type')->div('field');
+    echo $this->field($this->classifier->value_name)->label('value_name')->div('field');
+    echo $this->classifierTypes($this->classifier)->label("Для типов")->div('field');
+
+?>
+<div class="separator">
+<?php    
+    echo $action_container->bar('bottom')->span('right');        
+?>
+</div>

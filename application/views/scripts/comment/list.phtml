@@ -1,0 +1,10 @@
+<?php  if(!isset($this->cacheName) || !$this->cache->start($this->cacheName)): ?>
+<h1><?php echo $this->headline;?></h1>
+<?php foreach ($this->paginator as $item): ?>
+<div id="c<?php echo $item->id ?>" class="sub_node">
+<?php  echo $this->partial("/comment/list_comment.phtml",array('item'=>$item)); ?>
+</div>
+<?php endforeach; ?>
+<?php echo $this->paginationControl($this->paginator,'Sliding','/block/paginator.phtml');?>
+<?php if($this->cacheName) $this->cache->end($this->cacheTags); ?>
+<?php endif; $this->cacheName = null;?>

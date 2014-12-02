@@ -1,0 +1,17 @@
+<!-- - - - - tags- - - - -->
+<div id="menu_user" class="entry block">
+<h1><?php
+$admin_menu = $this->navigation()->findOneById(USER);
+echo $this->translate($admin_menu->getLabel()); ?></h1>
+<?php
+$options = array(
+    'indent'  => 4,
+    'ulClass' => 'sidebar'
+
+);
+echo $this->navigation()
+          ->menu()
+          ->renderMenu($admin_menu, $options);    
+
+?>
+</div>

@@ -1,0 +1,34 @@
+<?php $this->jQuery()->onLoadCaptureStart(); ?>
+  $j('#jqmenu').initMenu();
+<?php  $this->jQuery()->onLoadCaptureEnd(); ?>
+<?php if(!isset($this->cacheName) || !$this->cache->start($this->cacheName)): ?>
+<!-- - - - - taxonomy- - - - -->
+<div id="menu_term" class="entry block">
+<?php $classifier_menu = $this->navigation()->findOneById(MAIN); ?>
+<h1><?php echo $title=$this->translate($classifier_menu->getLabel()); ?></h1>
+
+<form id="term_search" class="term_search" title="<?php echo  $title  ?>"
+      action="<?php echo $this->url(array(ACTION=>_OPEN, CONTROLLER=>TERM), TERM, true) ?>"
+      enctype="application/x-www-form-urlencoded" method="post">
+<ul id="jqmenu" class="sidebar">
+<?php
+    foreach ($classifier_menu as $page) {
+    echo  $this->itemLink($page,null,'#')->li(null,false);
+    //echo ($page->isActive())? '+' : '-';
+    if ($page->getPages() != null) {
+        echo "<ul>";
+        foreach ($page as $sub_page) {
+            echo  $this->itemLink($sub_page)->checkbox()->li();
+        }
+        echo "</ul>";
+    }
+    echo "</li>";
+}
+?>
+</ul>
+<?php
+ echo $this->formSubmit('save', $this->translate(SEARCH)), PHP_EOL, '</form>';
+?>
+</div><!--end text-->
+<?php if($this->cacheName) { $this->cache->end($this->cacheTags); $this->cacheName = null;} ?>
+<?php endif;?>

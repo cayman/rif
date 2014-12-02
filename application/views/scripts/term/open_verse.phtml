@@ -1,0 +1,34 @@
+<?php #Содержимое материала
+    $actions = $this->itemActions(NODE,$this->node);
+    $terms=$this->nodeTerms($this->node);
+    $text=$this->nodeText($this->node,7);
+    $identity = $this->login()->hasIdentity();
+
+    echo $terms->part(array(HEAD,VISIBILITY,SOURCE,FORM))->div(TERMS);
+    echo $actions->part(array(_ADD,_EDIT,TERM))->div('actions');
+    echo $text->div('verse hide'.$this->node->hide);
+    echo $this->itemPic($this->node)->div('verse');
+    if($text->isShort())
+        echo $actions->part('read')->div('read');
+    echo $terms->part(TASK)->label('&#182;')->div(TASK);
+    echo $terms->part(RELATION)->label('@')->div(RELATION);
+    if($identity)
+        echo $this->itemDesc($this->node)->label(DESC)->div('desc');
+    echo $terms->part(TAG)->label(TAGS)->div(TAGS);
+    if($identity)
+        echo $this->nodeKeys($this->node)->label(KEYS)->div(KEYS);
+    echo $terms->part(array('book','publish','rating'))->div(TERMS);
+?>
+<div id="form<?php echo $this->node->id; ?>" class="jform"></div>
+<div class="separator">
+<script type="text/javascript">
+//<![CDATA[
+    $j(document).ready(function() {
+        $j(<?php echo "'#share{$this->node->id}'"?>).toBookmark(<?php echo "'share{$this->node->id}','{$actions->href(_OPEN)}','{$this->node->title}'"; ?>);
+     });
+//]]>
+</script>
+<span id="share<?php echo $this->node->id; ?>" class="share left"></span>
+<?php  echo $this->itemDate($this->node)->span('left'); ?>
+<?php echo $actions->part(array(COMMENT,_UP,_DOWN))->span('right'); ?>
+</div>

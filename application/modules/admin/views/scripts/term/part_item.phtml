@@ -1,0 +1,19 @@
+<?php #Содержимое элемента классификтора
+
+    $menu=Zend_Registry::get(NAVIGATION);
+    $action_container = $this->itemActions($menu[TERM],$this->term);
+
+    echo $this->itemName($this->term)->label(TERM)->h1();
+    echo $this->itemName($this->term->getClassifier(),CLASSIFIER)->label(CLASSIFIER)->div('terms');
+    echo $action_container->bar('top')->div('actions');
+    echo $this->field($this->term->id)->label(ID)->div('field');
+    echo $this->itemDesc($this->term)->label(DESC)->div('desc');
+    echo $this->itemDate($this->term)->label(DATE)->div('field');
+    echo $this->field($this->term->order)->label(ORDER)->div('field');
+
+?>
+<div class="separator">
+<?php    
+    echo $action_container->bar('bottom')->span('right');
+?>
+</div>

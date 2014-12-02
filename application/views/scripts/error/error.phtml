@@ -1,0 +1,30 @@
+<div class="messages">
+<h1><?php echo $this->message ?></h1>
+
+<?php if (isset($this->exception)): ?>
+
+<h2>Exception information:</h2>
+<p>
+    <b>Code:</b> <?php echo $this->exception->getCode() ?>
+</p>
+
+<h2>Stack trace:</h2>
+<pre class="trace"><?php echo $this->exception->getTraceAsString() ?>
+</pre>
+
+<h2>Request Parameters:</h2>
+<p class="trace"><?php echo var_export($this->request->getParams(), true) ?>
+</p>
+<?php endif ?>
+
+<?php if ($this->exception instanceof Site_Service_Exception): ?>
+<?php $previous=$this->exception->getPreviousException(); ?>
+<?php if (isset($previous)): ?>
+<h2>Previous information:</h2>
+<p>
+<?php echo $this->exception->getPreviousException()->getMessage(); ?>
+</p>
+<?php endif ?>
+<?php endif ?>
+
+</div>

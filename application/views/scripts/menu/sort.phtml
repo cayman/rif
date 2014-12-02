@@ -1,0 +1,15 @@
+<!-- - - - - sort- - - - -->
+<div id="menu_sort" class="entry block">
+<h1><?php echo $this->translate(ORDER); ?></h1>
+<?php
+ $url=$this->url(array(PAGE=>1));
+foreach($this->items as $item){
+	$label=$this->translate($item);
+    $title=$this->translate($item.'.sort');
+	if($this->sort==$item)
+		echo "<a href=\"$url?sort=$item\" class=\"active\" title=\"$title\">$label</a>",PHP_EOL;
+	else
+		echo "<a href=\"$url?sort=$item\" title=\"$title\">$label</a>",PHP_EOL;
+}
+?>
+</div>

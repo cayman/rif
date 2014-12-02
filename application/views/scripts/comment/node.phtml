@@ -1,0 +1,9 @@
+<?php if(isset($this->paginator) && count($this->paginator)>0): ?>
+<h2><?php echo $this->headline;?></h2>
+<?php foreach ($this->paginator as $item): ?>
+<div id="c<?php echo $item->id ?>" class="sub_node">
+<?php  echo $this->partial("/comment/node_comment.phtml",array('item'=>$item)); ?>
+</div>
+<?php endforeach; ?>
+<?php echo $this->paginationControl($this->paginator,'Sliding','/block/paginator.phtml');?>
+<?php endif; ?>

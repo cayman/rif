@@ -1,0 +1,21 @@
+<?php #Содержимое материала
+//   
+
+    $actions = $this->itemActions(NODE,$this->node);
+    $terms=$this->nodeTerms($this->node);
+    $text=$this->nodeText($this->node,7);
+    echo $actions->part(array(_ADD,_EDIT,TERM))->div('actions');
+    echo $text->div('verse hide'.$this->node->hide);
+    if($text->isShort())
+        echo $actions->part('read')->div('read');
+    echo $terms->part(TASK)->label('&#182;')->div(TASK);
+    echo $terms->part(TAG)->label(TAGS)->div(TAGS);
+
+?>
+<div id="form<?php echo $this->node->id; ?>" class="jform"></div>
+<div class="separator">
+<?php    
+    echo $this->itemDate($this->node)->span('left');
+    echo $terms->part(array(HEAD,SOURCE,FORM))->label('goto')->span('right');
+?>
+</div>

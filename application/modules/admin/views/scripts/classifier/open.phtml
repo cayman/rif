@@ -1,0 +1,18 @@
+<div id="text">
+<div id="classifier<?php echo $this->classifier->id ?>" class="node">
+<?php echo $this->partial("/classifier/part_item.phtml",array(CLASSIFIER => $this->classifier)); ?>
+</div>
+<table class="items">
+<caption><?php echo $this->headline;?></caption>
+<tr>
+<?php echo $this->partial("/term/part_table_header.phtml"); ?>
+</tr>
+<?php foreach ($this->list as $item):?>
+<tr class="<?php echo $this->cycle(array('odd', 'even'))->next(); ?>">
+<?php echo $this->partial("/term/part_table_row.phtml", array(TERM => $item)); ?>
+</tr>
+<?php endforeach;?>
+</table>
+</div><!--end text-->
+
+

@@ -1,0 +1,31 @@
+<div id="text">
+<h1><?php echo $this->headline;?></h1>
+<div id="classifier" class="node">
+<?php
+    $menu=Zend_Registry::get(NAVIGATION);
+   // $action_container = $this->itemActions($menu[TYPE.'_'._LIST]);
+    echo $this->help; 
+?>
+<div class="separator">
+<?php
+   // echo $action_container->bar('bottom')->span('right');
+?>
+</div>
+ </div>
+
+
+<table class="items">
+<caption><?php echo $this->headline;?></caption>
+<tr>
+<?php echo $this->partial("/type/part_table_header.phtml"); ?>
+</tr>
+<?php foreach ($this->list as $item):?>
+<tr class="<?php echo $this->cycle(array('odd', 'even'))->next(); ?>">
+<?php echo $this->partial("/type/part_table_row.phtml", array(TYPE => $item)); ?>
+</tr>
+<?php endforeach;?>
+</table>
+
+</div><!--end text-->
+
+

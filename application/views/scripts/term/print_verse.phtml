@@ -1,0 +1,20 @@
+<?php #Содержимое материала
+//
+
+    $terms=$this->nodeTerms($this->node);
+
+    echo $terms->part(array(HEAD,VISIBILITY,SOURCE,FORM))->div(TERMS);
+    echo $this->nodeText($this->node)->div('verse hide'.$this->node->hide);
+    echo $this->itemPic($this->node)->div('verse');
+    echo $terms->part(TASK)->label('&#182;')->div(TASK);
+    echo $terms->part(RELATION)->label('@')->div(RELATION);
+    echo $terms->part(TAGS)->label(TAGS)->div(TAGS);
+
+?>
+<div class="separator">
+<?php
+    echo $this->itemId($this->node)->span('left');
+    echo $this->itemDate($this->node)->span('left');
+    echo $terms->part(array('book','publish','rating'))->span('right');
+?>
+</div>

@@ -1,0 +1,33 @@
+<?php #Содержимое материала
+//   
+
+    $actions = $this->itemActions(NODE,$this->node);
+    $terms=$this->nodeTerms($this->node);
+
+    echo $actions->item(_OPEN)->h1();
+    echo $terms->part(array('publish',HEAD,VISIBILITY,SOURCE,FORM))->div(TERMS);
+    echo $actions->part(array(_ADD,_EDIT,TERM))->div('actions');
+    echo $this->itemPic($this->node)->div('text center');
+    echo $this->nodeText($this->node)->div(TEXT);
+    echo $terms->part(TASK)->label('&#182;')->div(TASK);
+    echo $terms->part(RELATION)->label('@')->div(RELATION);
+    if($this->login()->hasIdentity())
+        echo $this->itemDesc($this->node)->label(DESC)->div('desc');
+    echo $terms->part(TAG)->label(TAGS)->div(TAGS);
+
+?>
+<div id="form<?php echo $this->node->id; ?>" class="jform"></div>
+<div class="separator">
+<script type="text/javascript">
+//<![CDATA[
+    $j(document).ready(function() {
+        $j(<?php echo "'#share{$this->node->id}'"?>).toBookmark(<?php echo "'share{$this->node->id}','{$actions->href(_OPEN)}','{$this->node->title}'"; ?>);
+     });
+//]]>
+</script>
+<span id="share<?php echo $this->node->id; ?>" class="share left"></span>
+<?php    
+    echo $this->itemDate($this->node)->span('left');
+?>
+<?php echo $actions->part(COMMENT)->span('right'); ?>
+</div>

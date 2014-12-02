@@ -1,0 +1,14 @@
+<h1><?php echo $this->headline;?></h1>
+
+<?php foreach ($this->paginator as $node): ?>
+<div id="node<?php echo $node->id; ?>" class="node">
+<a name="n<?php echo $node->id; ?>"></a>
+<?php echo $this->partial("/term/open_{$node->type_code}.phtml",array(NODE=>$node)); ?>
+</div>
+<?php endforeach; ?>
+<?php echo $this->paginationControl($this->paginator,'Sliding','/block/paginator.phtml');?>
+
+
+
+
+

@@ -1,0 +1,5 @@
+<?php if(!$this->cache->start($this->cacheName)): ?>
+<?php
+   echo $this->feed;
+?>
+<?php $this->cache->end($this->cacheTags); endif;?>

@@ -1,0 +1,13 @@
+<?php if(!isset($this->cacheName) || !$this->cache->start($this->cacheName)): ?>
+<!-- - - - - tags- - - - -->
+<div id="menu_tags" class="entry block">
+<?php $tags_menu = $this->navigation()->findOneById(CLASSIFIER.TAG_CLASS_ID); ?>
+<h1><?php echo $this->translate($tags_menu->getLabel()); ?></h1>
+<ul class="sidebar inline">
+<?php foreach ($tags_menu as $page)
+  echo $this->itemLink($page,$page->label)->li();
+?>
+</ul>
+</div>
+<?php if($this->cacheName) { $this->cache->end($this->cacheTags); $this->cacheName = null;} ?>
+<?php endif;?>
