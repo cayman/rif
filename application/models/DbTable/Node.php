@@ -88,7 +88,7 @@ class Site_Model_DbTable_Node extends Zend_Db_Table_Abstract {
      * @param  int $id ID узла
      * @param  array  $termsAccess Термины досттупа к материалу*
      */
-    public function find($id,$termsAccess=null){
+    public function findById($id,$termsAccess=null){
         $select = $this->partSelect()->where('node.id = ?',$id);
         $this->partAccess($select, $termsAccess);
         //Log::debug($this, 'selectById', $select);

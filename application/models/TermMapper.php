@@ -23,7 +23,7 @@ class Site_Model_TermMapper extends Site_Model_EntityMapper {
      */
     public function find($id,$classifier=null) {
         Log::debug($this, "find:$id", $classifier);
-        $result = $this->getDbTable()->find($id, $classifier);
+        $result = $this->getDbTable()->findById($id, $classifier);
         return $this->fetchOne($result);
     }
 

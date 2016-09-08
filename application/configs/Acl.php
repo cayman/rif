@@ -2,46 +2,46 @@
 class Site_Configs_Acl extends Zend_Acl {
 
     private function initRoles() {
-        // Ñîçäàíèå íîâîé ðîëè guest («ãîñòü»)
+        // Ð¡Ð¾Ð·Ð´Ð°Ð½Ð¸Ðµ Ð½Ð¾Ð²Ð¾Ð¹ Ñ€Ð¾Ð»Ð¸ guest (Â«Ð³Ð¾ÑÑ‚ÑŒÂ»)
         $this->addRole(new Zend_Acl_Role(ADMIN));
         $this->addRole(new Zend_Acl_Role(GUEST));
         $this->addRole(new Zend_Acl_Role(READER),GUEST);
-        // Ñîçäàíèå ðîëè editor («ðåäàêòîð») êîòîðàÿ íàñëåäóåò  ðîëü guest
+        // Ð¡Ð¾Ð·Ð´Ð°Ð½Ð¸Ðµ Ñ€Ð¾Ð»Ð¸ editor (Â«Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¾Ñ€Â») ÐºÐ¾Ñ‚Ð¾Ñ€Ð°Ñ Ð½Ð°ÑÐ»ÐµÐ´ÑƒÐµÑ‚  Ñ€Ð¾Ð»ÑŒ guest
         $this->addRole(new Zend_Acl_Role(EDITOR), READER);
     }
 
     private function initResources() {
-        // Ñîçäà¸ì ðåñóðñ «Ãëàâíàÿ ñòðàíèöà»
+        // Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ Ñ€ÐµÑÑƒÑ€Ñ Â«Ð“Ð»Ð°Ð²Ð½Ð°Ñ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð°Â»
         $this->addResource(new Zend_Acl_Resource(MAIN));
 
-        //  Ñîçäà¸ì ðåñóðñ «Àóòåôèêàöèÿ»
+        //  Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ Ñ€ÐµÑÑƒÑ€Ñ Â«ÐÑƒÑ‚ÐµÑ„Ð¸ÐºÐ°Ñ†Ð¸ÑÂ»
        $this->addResource(new Zend_Acl_Resource(AUTH));
 
-        //  Ñîçäà¸ì ðåñóðñ «Êëàññèôèêàòîð»
+        //  Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ Ñ€ÐµÑÑƒÑ€Ñ Â«ÐšÐ»Ð°ÑÑÐ¸Ñ„Ð¸ÐºÐ°Ñ‚Ð¾Ñ€Â»
        $this->addResource(new Zend_Acl_Resource(CLASSIFIER));
 
-        //  Ñîçäà¸ì ðåñóðñ «Àóòåôèêàöèÿ»
+        //  Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ Ñ€ÐµÑÑƒÑ€Ñ Â«ÐÑƒÑ‚ÐµÑ„Ð¸ÐºÐ°Ñ†Ð¸ÑÂ»
        $this->addResource(new Zend_Acl_Resource(USER));
 
-        //  Ñîçäà¸ì ðåñóðñ «Òèï ìàòåðèàëà»
+        //  Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ Ñ€ÐµÑÑƒÑ€Ñ Â«Ð¢Ð¸Ð¿ Ð¼Ð°Ñ‚ÐµÑ€Ð¸Ð°Ð»Ð°Â»
        $this->addResource(new Zend_Acl_Resource(TYPE));
 
-        //  Ñîçäà¸ì ðåñóðñ «Ñëîâàðü» êîòîðûé íàñëåäóåò ðåñóðñ «Ãëàâíàÿ ñòðàíèöà»
+        //  Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ Ñ€ÐµÑÑƒÑ€Ñ Â«Ð¡Ð»Ð¾Ð²Ð°Ñ€ÑŒÂ» ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ð½Ð°ÑÐ»ÐµÐ´ÑƒÐµÑ‚ Ñ€ÐµÑÑƒÑ€Ñ Â«Ð“Ð»Ð°Ð²Ð½Ð°Ñ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ð°Â»
        $this->addResource(new Zend_Acl_Resource(TERM),MAIN);
 
-       //  Ñîçäà¸ì ðåñóðñ «Ïîèñê» êîòîðûé íàñëåäóåò ðåñóðñ «Ãëàâû»
+       //  Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ Ñ€ÐµÑÑƒÑ€Ñ Â«ÐŸÐ¾Ð¸ÑÐºÂ» ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ð½Ð°ÑÐ»ÐµÐ´ÑƒÐµÑ‚ Ñ€ÐµÑÑƒÑ€Ñ Â«Ð“Ð»Ð°Ð²Ñ‹Â»
 
        $this->addResource(new Zend_Acl_Resource(NODE),MAIN);
 
-        //  Ñîçäà¸ì ðåñóðñ «Êîììåíòàðèé» êîòîðûé íàñëåäóåò ðåñóðñ «Óçåë»
+        //  Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ Ñ€ÐµÑÑƒÑ€Ñ Â«ÐšÐ¾Ð¼Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸Ð¹Â» ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ð½Ð°ÑÐ»ÐµÐ´ÑƒÐµÑ‚ Ñ€ÐµÑÑƒÑ€Ñ Â«Ð£Ð·ÐµÐ»Â»
        $this->addResource(new Zend_Acl_Resource(COMMENT), NODE);
 
-        //  Ñîçäà¸ì ðåñóðñ «Ñåðâèñ äëÿ àäìèíà»
+        //  Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ Ñ€ÐµÑÑƒÑ€Ñ Â«Ð¡ÐµÑ€Ð²Ð¸Ñ Ð´Ð»Ñ Ð°Ð´Ð¼Ð¸Ð½Ð°Â»
        $this->addResource(new Zend_Acl_Resource('service'));
 
         Log::debug($this," initControllerResources");
 
-         //  Ñîçäà¸ì ðåñóðñ «Áëîêè òîëüêî äëÿ àäìèíà»
+         //  Ð¡Ð¾Ð·Ð´Ð°Ñ‘Ð¼ Ñ€ÐµÑÑƒÑ€Ñ Â«Ð‘Ð»Ð¾ÐºÐ¸ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð´Ð»Ñ Ð°Ð´Ð¼Ð¸Ð½Ð°Â»
        $this->addResource(new Zend_Acl_Resource(MENU));
 
        $this->addResource(new Zend_Acl_Resource(BLOCK));
@@ -51,14 +51,14 @@ class Site_Configs_Acl extends Zend_Acl {
     }
 
     private function initPrivileges() {
-        // Ðàçðåøàåì ãîñòþ ïðîñìàòðèâàòü ñòðàíèöû
+        // Ð Ð°Ð·Ñ€ÐµÑˆÐ°ÐµÐ¼ Ð³Ð¾ÑÑ‚ÑŽ Ð¿Ñ€Ð¾ÑÐ¼Ð°Ñ‚Ñ€Ð¸Ð²Ð°Ñ‚ÑŒ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñ‹
 
-        // Ðàçðåøàåì àäìèíèñòðàòîðó âñå
+        // Ð Ð°Ð·Ñ€ÐµÑˆÐ°ÐµÐ¼ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€Ñƒ Ð²ÑÐµ
         $this->allow(ADMIN);
         $this->deny(ADMIN, AUTH, _LOGIN);        
 
         $this->allow(GUEST, AUTH, _LOGIN);
-        $this->allow(GUEST, MAIN,  array(_OPEN,'feed','map')); //index è âñåõ íàñëåäíèêîâ:head, rank, comments, verse,author
+        $this->allow(GUEST, MAIN,  array(_OPEN,'feed','map')); //index Ð¸ Ð²ÑÐµÑ… Ð½Ð°ÑÐ»ÐµÐ´Ð½Ð¸ÐºÐ¾Ð²:head, rank, comments, verse,author
         $this->allow(GUEST, CLASSIFIER , array(_OPEN));
         $this->allow(GUEST, TERM , array(SEARCH));
         $this->allow(GUEST, NODE, array(AUTHOR, VERSE, RANK, TERM, KEY,COMMENTS)); //@todo ??????????????????????
@@ -69,11 +69,11 @@ class Site_Configs_Acl extends Zend_Acl {
         $this->allow(GUEST, MENU);
         $this->deny(GUEST, MENU,array(TAXONOMY,SORT,USER));
 
-        // ðàáîòà ñ êëàññèôèâàòîðîì + ïðàâà GUEST
+        // Ñ€Ð°Ð±Ð¾Ñ‚Ð° Ñ ÐºÐ»Ð°ÑÑÐ¸Ñ„Ð¸Ð²Ð°Ñ‚Ð¾Ñ€Ð¾Ð¼ + Ð¿Ñ€Ð°Ð²Ð° GUEST
         $this->deny(READER, AUTH, _LOGIN);
         $this->allow(READER, AUTH, _LOGOUT);
 
-        // Ðàçðåøàåì ðåäàêòîðó äîáàâëÿòü è ðåäàêòèðîâàòü ñòèõè. + ïðàâà READER
+        // Ð Ð°Ð·Ñ€ÐµÑˆÐ°ÐµÐ¼ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¾Ñ€Ñƒ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÑ‚ÑŒ Ð¸ Ñ€ÐµÐ´Ð°ÐºÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ ÑÑ‚Ð¸Ñ…Ð¸. + Ð¿Ñ€Ð°Ð²Ð° READER
         $this->allow(EDITOR, TERM , array(_OPEN,_PRINT,_EDIT,_ADD));
         $this->allow(EDITOR, NODE, array(_ADD, _EDIT,_COPY));
         $this->deny(EDITOR, NODE, array(RANK));

@@ -31,7 +31,7 @@ class Site_Model_NodeMapper extends Site_Model_EntityMapper
     {
         Log::debug($this, "find:", $id);
         $termsAccess = $this->_access->getLegalTerms();
-        $result = $this->getDbTable()->find($id, $termsAccess);
+        $result = $this->getDbTable()->findById($id, $termsAccess);
         return $this->fetchOne($result);
     }
 

@@ -45,7 +45,7 @@ class Site_Model_DbTable_Term extends Zend_Db_Table_Abstract {
      * @param  int|string|null $classifier ID или Код классификатора
      * return  Zend_Db_Select
      */
-    public function find($id,$classifier=null){
+    public function findById($id,$classifier=null){
         $select = $this->partSelect()->where('TT.id = ?',$id);
         $this->partClassifier($select,$classifier);
         Log::debug($this, 'selectById', $select);

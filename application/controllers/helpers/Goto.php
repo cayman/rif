@@ -7,34 +7,38 @@
 class Site_Controller_Helper_Goto extends Zend_Controller_Action_Helper_Redirector
 {
 
-    public function route($controller,$id=null,$action=_OPEN)
+    public function route($controller, $id = null, $action = _OPEN)
     {
-        Log::debug($this,"goto=$controller,$action",$id);
-        $this->gotoRoute(array(CONTROLLER=>$controller,
-                               ACTION=>$action,
-                               ID=>$id
-                               //PAGE=>$page
-                               ),$controller);
+        Log::debug($this, "goto=$controller,$action", $id);
+        $this->gotoRoute(array(CONTROLLER => $controller,
+            ACTION => $action,
+            ID => $id
+            //PAGE=>$page
+        ), $controller);
     }
 
-    public function back() {
+    public function back()
+    {
 
-        if(isset($_SERVER[HTTP_REFERER]))
-          $this->gotoUrl($_SERVER[HTTP_REFERER]);
+        if (isset($_SERVER[HTTP_REFERER]))
+            $this->gotoUrl($_SERVER[HTTP_REFERER]);
         else
-          $this->route(MAIN);
+            $this->route(MAIN);
     }
-
 
     /**
-     * Паттерн Стратегии: вызываем помощник как метод брокера
+     * direct(): Perform helper when called as
+     * $this->_helper->redirector($action, $controller, $module, $params)
      *
-     * @param  string $name
-     * @param  array|Zend_Config $options
-     * @return Zend_Form
+     * @param  string $action
+     * @param  string $controller
+     * @param  string $module
+     * @param  array  $params
+     * @return void
      */
-    public function direct($controller,$id,$action=_OPEN)
+    public function direct($action, $controller = null, $module = null, array $params = array())
     {
-        $this->route($controller,$id,$action);
+        $this->gotoSimple($action, $controller, $module, $params);
     }
+
 }
