@@ -15,14 +15,14 @@ class Site_View_Helper_Html extends Zend_View_Helper_Abstract {
         return $this;
     }
 
-    /**Проверка прав на действие*/
+    /**РџСЂРѕРІРµСЂРєР° РїСЂР°РІ РЅР° РґРµР№СЃС‚РІРёРµ*/
     public function allowed($resource, $privilege) {
         if (!$this->view->login()->isAllowed($resource, $privilege))
             $this->html = "";
         return $this;
     }
 
-    /**Проверка прав на действие*/
+    /**РџСЂРѕРІРµСЂРєР° РїСЂР°РІ РЅР° РґРµР№СЃС‚РІРёРµ*/
     public function visible($visible=true) {
         if ($visible==false)
             $this->html = "";
@@ -32,7 +32,7 @@ class Site_View_Helper_Html extends Zend_View_Helper_Abstract {
 
     protected static $tags = array('div', 'p', 'h1', 'h2', 'h3', 'h4', 'span','a','li');
 
-    /**Отображение тега */
+    /**РћС‚РѕР±СЂР°Р¶РµРЅРёРµ С‚РµРіР° */
     public function __call($name, $arguments) {
         if (in_array($name, self::$tags)) {
             if (isset($this->html)) {
@@ -49,7 +49,7 @@ class Site_View_Helper_Html extends Zend_View_Helper_Abstract {
     }
 
     /**
-     * Создания Zend_Navigation_Page на основе шаблона
+     * РЎРѕР·РґР°РЅРёСЏ Zend_Navigation_Page РЅР° РѕСЃРЅРѕРІРµ С€Р°Р±Р»РѕРЅР°
      *
      * @param  $name
      * @param Zend_Navigation_Page_Mvc $template

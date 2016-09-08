@@ -9,7 +9,7 @@ class Site_View_Helper_Messages extends Zend_View_Helper_Abstract{
 		Log::debug($this,"messages");
 		$messenger=Zend_Controller_Action_HelperBroker::getStaticHelper('flashMessenger');
 		$buffer="";
-		//Òåêóùèå ñîîáùåíèÿ
+		//Ğ¢ĞµĞºÑƒÑ‰Ğ¸Ğµ ÑĞ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ñ
 //		if($isCurrent && $messenger->hasCurrentMessages()){
 //			Log::debug($this,"current message",$messenger->getCurrentMessages());
 //			$buffer.="<div class=\"$class\">";
@@ -17,7 +17,7 @@ class Site_View_Helper_Messages extends Zend_View_Helper_Abstract{
 //				$buffer.="<p>$message</p>";
 //			$buffer.="</div>";
 //		}
-		//Íå òåêóùèå ñîîáùåíèÿ
+		//ĞĞµ Ñ‚ĞµĞºÑƒÑ‰Ğ¸Ğµ ÑĞ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ñ
 		if(/*!$isCurrent && */$messenger->hasMessages()){
 			Log::debug($this,"not current message",$messenger->getMessages());
 			$buffer.="<div class=\"$class\">";

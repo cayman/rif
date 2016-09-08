@@ -10,6 +10,7 @@ class BlockController extends Zend_Controller_Action {
         $this->cache_core = $this->getInvokeArg('cache_core');
         $this->access = Site_Service_Registry::get(ACCESS);
         $this->nodes = Site_Service_Registry::get(NODE);
+        $this->navigate_session = new Zend_Session_Namespace(SITE_SELECT);
     }
 
     /**

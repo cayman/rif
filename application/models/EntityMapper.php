@@ -39,7 +39,7 @@ abstract class Site_Model_EntityMapper
     public function find($id)
     {
         Log::debug($this, "find:", $id);
-        $result = $this->getDbTable()->findById($id);
+        $result = $this->getDbTable()->find($id);
         return $this->fetchOne($result);
     }
 

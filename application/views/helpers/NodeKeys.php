@@ -11,7 +11,7 @@ class Site_View_Helper_NodeKeys extends Site_View_Helper_Html {
             $i=1;
             foreach ($words as $word) {
                 $id='node'.$node->id.'-'.KEY.$i++;
-                $page = $this->createPage($id,$word);
+                $page = $this->createPage1($id,$word);
                 $key_menu->addPage($page);
             }
         //}
@@ -21,7 +21,7 @@ class Site_View_Helper_NodeKeys extends Site_View_Helper_Html {
         return $this;
     }
 
-    protected function createPage($id,$word) {
+    protected function createPage1($id,$word) {
         $word_lower= mb_strtolower($word);
         $type=$this->getActive($word_lower);
         switch ($type){

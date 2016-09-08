@@ -35,8 +35,8 @@ class Site_View_Helper_ItemActions extends Site_View_Helper_Html
     }
 
     /**
-     * Прорисовка группы ссылок
-     * по шаблонам Nabigation_Page
+     * РџСЂРѕСЂРёСЃРѕРІРєР° РіСЂСѓРїРїС‹ СЃСЃС‹Р»РѕРє
+     * РїРѕ С€Р°Р±Р»РѕРЅР°Рј Nabigation_Page
      * @param  $ids
      * @param bool $hideLabel
      * @return Site_View_Helper_ItemActions
@@ -60,8 +60,8 @@ class Site_View_Helper_ItemActions extends Site_View_Helper_Html
     }
 
     /**
-     * Прорисовка одной ссылки
-     * по шаблону Nabigation_Page
+     * РџСЂРѕСЂРёСЃРѕРІРєР° РѕРґРЅРѕР№ СЃСЃС‹Р»РєРё
+     * РїРѕ С€Р°Р±Р»РѕРЅСѓ Nabigation_Page
      * @param  $id
      * @return Site_View_Helper_ItemActions
      */
@@ -78,8 +78,8 @@ class Site_View_Helper_ItemActions extends Site_View_Helper_Html
     }
 
     /**
-     * Прорисовка одной ссылки
-     * по шаблону Nabigation_Page
+     * РџСЂРѕСЂРёСЃРѕРІРєР° РѕРґРЅРѕР№ СЃСЃС‹Р»РєРё
+     * РїРѕ С€Р°Р±Р»РѕРЅСѓ Nabigation_Page
      * @param  $id
      * @return Site_View_Helper_ItemActions
      */

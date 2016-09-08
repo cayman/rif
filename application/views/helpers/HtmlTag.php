@@ -7,7 +7,7 @@
 
 class Site_View_Helper_HtmlTag extends Zend_View_Helper_HtmlElement{
 
-    /**Формирование тега */
+    /**Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ С‚РµРіР° */
      public function htmltag($tag, $content, array $attribs = array(),$close=true)
      {
          $attribs = array_filter($attribs);

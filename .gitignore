@@ -2,7 +2,9 @@
 *.iml
 *.ipr
 *.iws
+*.lock
 .idea/
 
 library/**
+vendor/**
 data/**

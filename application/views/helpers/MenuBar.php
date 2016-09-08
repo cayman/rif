@@ -8,7 +8,7 @@
 class Site_View_Helper_MenuBar extends Zend_View_Helper_Navigation_Menu {
 
     /**
-     * Расширяем метод htmlify
+     * Р Р°СЃС€РёСЂСЏРµРј РјРµС‚РѕРґ htmlify
      *
      * Returns an HTML string containing an 'a' element for the given page if
      * the page's href is not empty, and a 'span' element if it is empty
