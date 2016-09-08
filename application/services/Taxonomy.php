@@ -53,7 +53,7 @@ class Site_Service_Taxonomy extends Site_Service_Abstract
             }
             return $this->_classifiers;
         } catch (Zend_Exception $e) {
-            throw new Site_Service_Exception("Method error", 'getClassifiers', 4003, $e);
+            throw new Site_Service_Exception('Method error', 'getClassifiers', 4003, $e);
         }
     }
 

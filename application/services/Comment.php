@@ -97,6 +97,8 @@ class Site_Service_Comment extends Site_Service_Abstract  {
      */
     public function addComment($comment) {
         try {
+			if($this->countCommentsSpam($comment->ip)>0)
+				throw new Site_Service_Exception('Comment is SPAM',null,3032);
             $id = $this->getCommentMapper()->create($comment);
             if (!is_numeric($id)) throw new Site_Service_Exception('Comment not saved',null,3030);
             return $id;
