@@ -20,7 +20,7 @@ class Site_View_Markup_BBCode {
 
 
     public function __construct($role) {
-        //$options = array('encoding' => UTF, 'useDefaultTags' => true); @todo Кодировку ставить не надо
+        //$options = array('encoding' => UTF, 'useDefaultTags' => true); @todo РљРѕРґРёСЂРѕРІРєСѓ СЃС‚Р°РІРёС‚СЊ РЅРµ РЅР°РґРѕ
         $options = array('useDefaultTags' => true);
         $this->bbcode = Zend_Markup::factory('Bbcode', 'Html', $options);
 
@@ -32,7 +32,7 @@ class Site_View_Markup_BBCode {
             $this->bbcode->addMarkup('todo',
             Zend_Markup_Renderer_RendererAbstract::TYPE_REPLACE,
                 array(
-                    'start' => '<span style="color: red; font-style: italic ;"><b>@Исправить: </b>',
+                    'start' => '<span style="color: red; font-style: italic ;"><b>@РСЃРїСЂР°РІРёС‚СЊ: </b>',
                     'end' => '</span>',
                     'group' => 'inline'
                 )
@@ -40,7 +40,7 @@ class Site_View_Markup_BBCode {
             $this->bbcode->addMarkup('note',
             Zend_Markup_Renderer_RendererAbstract::TYPE_REPLACE,
                 array(
-                    'start' => '<span style="color: green;"><b>@Заметка: </b>',
+                    'start' => '<span style="color: green;"><b>@Р—Р°РјРµС‚РєР°: </b>',
                     'end' => '</span>',
                     'group' => 'inline'
                 )

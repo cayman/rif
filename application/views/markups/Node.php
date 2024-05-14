@@ -20,7 +20,7 @@ class Site_View_Markup_Node implements Zend_Markup_Renderer_TokenConverterInterf
                 $ret_value = '<div class="sub">'.$bbcode->render($node->text).'</div>'.PHP_EOL;
             }
             else
-                $ret_value = "<b>!Íåâåðíàÿ ññûëêà:node=".$token->getAttribute(NODE)."</b>";
+                $ret_value = "<b>!ÐÐµÐ²ÐµÑ€Ð½Ð°Ñ ÑÑÑ‹Ð»ÐºÐ°:node=".$token->getAttribute(NODE)."</b>";
         }
         else
             $ret_value = $this->getNodeLink($token, $text);
