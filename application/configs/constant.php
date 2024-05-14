@@ -4,9 +4,9 @@ define('WIN','WINDOWS-1251');
 define('LAQUO',"&#171;");
 define('RAQUO',"&#187;");
 
-define('REG_NAME','/^[\p{L}\p{N}\p{Pd}\p{Cyrillic}\s@_:]+$/u');//Для Имен и Заголовков
+define('REG_NAME','/^[\p{L}\p{N}\p{Pd}\p{Cyrillic}\s@_:]+$/u');//Р”Р»СЏ РРјРµРЅ Рё Р—Р°РіРѕР»РѕРІРєРѕРІ
 define('REG_TEXT','/^[\p{L}\p{N}\p{P}\p{Sm}\p{Sc}\p{Cyrillic}\s*]+$/u');
-define('REG_WORDS','/^[,\p{Cyrillic}\p{Pd}\s]+$/u'); //Для Слов
+define('REG_WORDS','/^[,\p{Cyrillic}\p{Pd}\s]+$/u'); //Р”Р»СЏ РЎР»РѕРІ
 
 define('HEAD_CLASS_ID','1');
 define('LEVEL_CLASS_ID','2');
