@@ -36,7 +36,7 @@ class Site_Plugin_Acl extends Zend_Controller_Plugin_Abstract {
             //@name access for resource
             $this->allow=$this->_auth->isAllowed($resource, $privilege);
             if (!$this->allow) {
-                // Если недостаточно прав то мы перенаправляем его на страницу авторизации
+                // Р•СЃР»Рё РЅРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РїСЂР°РІ С‚Рѕ РјС‹ РїРµСЂРµРЅР°РїСЂР°РІР»СЏРµРј РµРіРѕ РЅР° СЃС‚СЂР°РЅРёС†Сѓ Р°РІС‚РѕСЂРёР·Р°С†РёРё
                 Log::err($this, "role='$role' hasn't rite to resource='$resource' privilege='$privilege'");
                 $this->_messenger->addMessage('Access to the page is closed');
                 $this->_goto->route(MAIN);
