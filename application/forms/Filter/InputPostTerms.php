@@ -3,7 +3,7 @@ class Site_Form_Filter_InputPostTerms implements Zend_Filter_Interface
 {
     private $_count=0;
     /**
-     * Производит фильтрацию в соответствии с назначением фильтра
+     * РџСЂРѕРёР·РІРѕРґРёС‚ С„РёР»СЊС‚СЂР°С†РёСЋ РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ РЅР°Р·РЅР°С‡РµРЅРёРµРј С„РёР»СЊС‚СЂР°
      *
      * @param string $value
      * @return string

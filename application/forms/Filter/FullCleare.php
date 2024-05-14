@@ -9,7 +9,7 @@ class Site_Form_Filter_FullCleare implements Zend_Filter_Interface
 
 
     /**
-     * Ïðîèçâîäèò ôèëüòðàöèþ â ñîîòâåòñòâèè ñ íàçíà÷åíèåì ôèëüòðà
+     * ÐŸÑ€Ð¾Ð¸Ð·Ð²Ð¾Ð´Ð¸Ñ‚ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€Ð°Ñ†Ð¸ÑŽ Ð² ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²Ð¸Ð¸ Ñ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÐµÐ¼ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€Ð°
      *
      * @param string $value
      * @return string
@@ -17,7 +17,7 @@ class Site_Form_Filter_FullCleare implements Zend_Filter_Interface
     public function filter($value)
     {
         $value1 =$value;
-        // Ïðîõîäèì ïî ìàññèâó è çàìåíÿåì êàæäûé ñèìâîë ôèëüòðóåìîãî çíà÷åíèÿ
+        // ÐŸÑ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼ Ð¿Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ñƒ Ð¸ Ð·Ð°Ð¼ÐµÐ½ÑÐµÐ¼ ÐºÐ°Ð¶Ð´Ñ‹Ð¹ ÑÐ¸Ð¼Ð²Ð¾Ð» Ñ„Ð¸Ð»ÑŒÑ‚Ñ€ÑƒÐµÐ¼Ð¾Ð³Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ
         foreach($this->_deleteSymbols as $letterVal) {
             $value = str_replace($letterVal,' ',$value);
         }
