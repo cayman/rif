@@ -1,7 +1,7 @@
-<?php #Êîììåíòàðèé
+<?php #ÐšÐ¾Ð¼Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸Ð¹
 
     $actions = $this->itemActions(COMMENT,$this->item);
-    #Ñîäåðæèìîå êîììåíòàðèÿ
+    #Ð¡Ð¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ðµ ÐºÐ¾Ð¼Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸Ñ
     echo $this->commentLevel($this->item)->div('info');
     echo $actions->part(array(_EDIT,_DELETE))->div('actions');
     echo $this->commentName($this->item)->label(NAME)->div('name level'.$this->item->level);
