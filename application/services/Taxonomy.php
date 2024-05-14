@@ -173,9 +173,9 @@ class Site_Service_Taxonomy extends Site_Service_Abstract
      */
     public function getTermValuesOptions()
     {
-        return array(0 => 'Íå èñïîëüçóåòñÿ',
-            Site_Model_Term::DECIMAL_VALUE => 'Öåëî÷èñëåííîå',
-            Site_Model_Term::CHAR_VALUE => 'Ñòðîêîâîå',
+        return array(0 => 'ÐÐµ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ÑÑ',
+            Site_Model_Term::DECIMAL_VALUE => 'Ð¦ÐµÐ»Ð¾Ñ‡Ð¸ÑÐ»ÐµÐ½Ð½Ð¾Ðµ',
+            Site_Model_Term::CHAR_VALUE => 'Ð¡Ñ‚Ñ€Ð¾ÐºÐ¾Ð²Ð¾Ðµ',
         );
 
     }
