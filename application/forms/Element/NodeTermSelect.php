@@ -11,7 +11,7 @@ class Site_Form_Element_NodeTermSelect extends Zend_Form_Element_Select {
     public function __construct($name, $label, $terms, $required = false) {
 
         $termsOptions = array();
-        $termsOptions[0] = "- не задано -";
+        $termsOptions[0] = "- РЅРµ Р·Р°РґР°РЅРѕ -";
         if($required==false) $termsValidate[] = 0;
         foreach ($terms as $term){
             $termsOptions[$term->id] = $term->name;
