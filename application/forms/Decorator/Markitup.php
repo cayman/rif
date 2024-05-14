@@ -3,18 +3,18 @@ Class Site_Form_Decorator_Markitup extends Zend_Form_Decorator_Abstract {
 
 
     /**
-     * Ğåíäåğèíã äåêîğàòîğà
+     * Ğ ĞµĞ½Ğ´ĞµÑ€Ğ¸Ğ½Ğ³ Ğ´ĞµĞºĞ¾Ñ€Ğ°Ñ‚Ğ¾Ñ€Ğ°
      *
      * @param string $content
      * @return string
      */
     public function render($content) {
-        // Ïîëó÷àåì îáúåêò ıëåìåíòà ê êîòîğîìó ïğèìåíÿåòñÿ äåêîğàòîğ
+        // ĞŸĞ¾Ğ»ÑƒÑ‡Ğ°ĞµĞ¼ Ğ¾Ğ±ÑŠĞµĞºÑ‚ ÑĞ»ĞµĞ¼ĞµĞ½Ñ‚Ğ° Ğº ĞºĞ¾Ñ‚Ğ¾Ñ€Ğ¾Ğ¼Ñƒ Ğ¿Ñ€Ğ¸Ğ¼ĞµĞ½ÑĞµÑ‚ÑÑ Ğ´ĞµĞºĞ¾Ñ€Ğ°Ñ‚Ğ¾Ñ€
         $element = $this->getElement();
         if (!$element instanceof Zend_Form_Element) {
             return $content;
         }
-        // Ïğîâåğÿåì îáúåêò âèäà çàğåãèñòğèğîâàííîãî äëÿ ôîğìû
+        // ĞŸÑ€Ğ¾Ğ²ĞµÑ€ÑĞµĞ¼ Ğ¾Ğ±ÑŠĞµĞºÑ‚ Ğ²Ğ¸Ğ´Ğ° Ğ·Ğ°Ñ€ĞµĞ³Ğ¸ÑÑ‚Ñ€Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ğ½Ğ¾Ğ³Ğ¾ Ğ´Ğ»Ñ Ñ„Ğ¾Ñ€Ğ¼Ñ‹
         if (null === $element->getView()) {
             return $content;
         }

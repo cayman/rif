@@ -9,8 +9,8 @@ Class Site_Form_Decorator_BBEditor extends Zend_Form_Decorator_Abstract {
         <div class="btn underline"></div>
         <div class="sbtn colon">:</div>
         <div class="sbtn semi">;</div>
-        <div class="sbtn dquote">«»</div>
-        <div class="sbtn ellipsis">…</div>          
+        <div class="sbtn dquote">Â«Â»</div>
+        <div class="sbtn ellipsis">â€¦</div>          
         <div class="btn link"></div>
         <div class="btn quote"></div>
         <div class="btn code"></div>
@@ -25,18 +25,18 @@ Class Site_Form_Decorator_BBEditor extends Zend_Form_Decorator_Abstract {
     }
 
     /**
-     * Ðåíäåðèíã äåêîðàòîðà
+     * Ð ÐµÐ½Ð´ÐµÑ€Ð¸Ð½Ð³ Ð´ÐµÐºÐ¾Ñ€Ð°Ñ‚Ð¾Ñ€Ð°
      *
      * @param string $content
      * @return string
      */
     public function render($content) {
-        // Ïîëó÷àåì îáúåêò ýëåìåíòà ê êîòîðîìó ïðèìåíÿåòñÿ äåêîðàòîð
+        // ÐŸÐ¾Ð»ÑƒÑ‡Ð°ÐµÐ¼ Ð¾Ð±ÑŠÐµÐºÑ‚ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ðº ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¼Ñƒ Ð¿Ñ€Ð¸Ð¼ÐµÐ½ÑÐµÑ‚ÑÑ Ð´ÐµÐºÐ¾Ñ€Ð°Ñ‚Ð¾Ñ€
         $element = $this->getElement();
         if (!$element instanceof Zend_Form_Element) {
             return $content;
         }
-        // Ïðîâåðÿåì îáúåêò âèäà çàðåãèñòðèðîâàííîãî äëÿ ôîðìû
+        // ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ Ð¾Ð±ÑŠÐµÐºÑ‚ Ð²Ð¸Ð´Ð° Ð·Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð´Ð»Ñ Ñ„Ð¾Ñ€Ð¼Ñ‹
         if (null === $element->getView()) {
             return $content;
         }
